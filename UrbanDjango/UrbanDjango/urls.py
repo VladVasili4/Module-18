@@ -29,7 +29,8 @@ urlpatterns = [
     # path('index1/', index),
     path('func/', index_task),
     path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),
-    path('games/', TemplateView.as_view(template_name='fourth_task/platform.html')),
-    path('wow/', TemplateView.as_view(template_name='fourth_task/games.html')),
+    path('wow/', index_task4),
+    # path('games/', TemplateView.as_view(template_name='fourth_task/platform.html')),
+    path('games/', TemplateView.as_view(template_name='fourth_task/games.html')),
     path('cart/', TemplateView.as_view(template_name='fourth_task/cart.html')),
 ]

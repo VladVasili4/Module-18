@@ -1,11 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> {%block title%}SuperTit{% endblock %}</title>
+    <link rel = 'stylesheet' type = 'text/css' href = {% static 'style.css' %}>
 </head>
 <body>
-<h2>{{text}}</h2>
+{% include 'inc.html' %} <!-- Вставка шаблона, в котором может быть целый блок(форма или таблица)-->
+<h1>{{text}}</h1>
 <h2>{{name}}</h2>
 <h2>{{number}}</h2>
 

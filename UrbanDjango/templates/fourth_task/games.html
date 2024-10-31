@@ -11,6 +11,10 @@
     <li><h3>Uwow <button>Голосовать</button></h3> </li>
     <li><h3>WoW Circle <button>Голосовать</button></h3> </li>
 </ul>
-<button><a href="http://127.0.0.1:8000/games">Вернуться на главную страницу</a></button>
+
+{% for i in server_list %}
+<h3>{{i}} <button>Голосовать</button> </h3>
+{% endfor %}
+<button><a href="http://127.0.0.1:8000/wow">Вернуться на главную страницу</a></button>
 </body>
 </html>
