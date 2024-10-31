@@ -5,6 +5,33 @@
     <title>Title</title>
 </head>
 <body>
-Пустышка
+<h2>{{text}}</h2>
+<h2>{{name}}</h2>
+<h2>{{number}}</h2>
+
+<!-- Дальше идут шаблоны, модернизирующие вывод-->
+
+{% for i in list%}
+    <h4> {{i}} </h4>
+{% endfor %}
+
+{% for i in list%}
+    <h4> {{i|upper}} </h4>
+{% endfor %}
+
+{% for i in list%}
+    <h4> {{i|title}} </h4>
+{% endfor %}
+
+{% for i in list%}
+    <h4> {{i|floatformat:3}} </h4>
+{% endfor %}
+
+{% if len_list > 5 %}
+<h3>Good, small list</h3>
+{% else %}
+<h3>Fatality, big list</h3>
+{% endif %}
+
 </body>
 </html>
