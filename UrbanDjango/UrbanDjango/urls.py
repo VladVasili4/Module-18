@@ -19,7 +19,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from example1.views import index
 from task2.views import index_task
-from task4.views import index_task4_g, index_task4_p
+from task4.views import index_task4_g, index_task4_p, index_task4_c
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,9 +30,10 @@ urlpatterns = [
     path('func/', index_task),
     path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),
     path('wow/', index_task4_p),
+    path('games/', index_task4_g),
+    path('cart/', index_task4_c),
     # path('wow/', TemplateView.as_view(template_name='fourth_task/platform.html')),
     # path('games/', TemplateView.as_view(template_name='fourth_task/games.html')),
-    path('games/', index_task4_g),
-    path('cart/', TemplateView.as_view(template_name='fourth_task/cart.html')),
+    # path('cart/', TemplateView.as_view(template_name='fourth_task/cart.html')),
     # path('menu/', TemplateView.as_view(template_name='fourth_task/menu.html')),
 ]

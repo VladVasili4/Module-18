@@ -15,3 +15,10 @@ def index_task4_g(request):
         'servers': ['Sirus', 'Uwow', 'WOW Circle'],
     }
     return render(request, 'fourth_task/games.html', context=server_list)
+
+def index_task4_c(request):
+    title = 'WOW cart'
+    context = {
+        'title': title,
+    }
+    return render(request, 'fourth_task/cart.html', context)

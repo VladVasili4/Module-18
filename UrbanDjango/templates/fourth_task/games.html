@@ -18,26 +18,18 @@
 
     <main>
         {% block content %}
-        {{ block.super }}
-        {% for i in server_list %}
-        <h3> {{i}} <button>Голосовать</button> </h3>
+        <h1 align="center">Лучшие WOW серверы</h1>
+        {% for i in servers %}         <!-- заменил server_list на servers -->
+        <h2> {{i}} <button>Голосовать</button> </h2>
         {% endfor %}
         {% endblock %}
     </main>
 
     <footer>
-        <h1 align="center">Лучшие WOW серверы</h1>
-        <ul>
-            <li><h2>Sirus <button>Голосовать</button> </h2></li>
-            <li><h2>Uwow <button>Голосовать</button></h2> </li>
-            <li><h2>WoW Circle <button>Голосовать</button></h2> </li>
-        </ul>
+        {% block basement %}
+        <button><a href="http://127.0.0.1:8000/wow">Вернуться на главную страницу</a></button>
+        {% endblock %}
     </footer>
-<!--Или в списке :-->
-<!--{% for i in server_list %}-->
-<!--<h3> {{i}} <button>Голосовать</button> </h3>-->
-<!--{% endfor %}-->
 
-<button><a href="http://127.0.0.1:8000/wow">Вернуться на главную страницу</a></button>
 </body>
 </html>
