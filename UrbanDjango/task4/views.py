@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
-def index_task4(request):
+def index_task4_p(request):
     title = 'WOW servers'
-    server_list = ['Sirus', 'WOW Circle']
-
     context = {
         'title': title,
-        'server_list': server_list,
     }
     return render(request, 'fourth_task/platform.html', context)
+    # return render(request, 'fourth_task/games.html', context)
+
+def index_task4_g(request):
+    server_list = {
+        'servers': ['Sirus', 'Uwow', 'WOW Circle'],
+    }
+    return render(request, 'fourth_task/games.html', context=server_list)

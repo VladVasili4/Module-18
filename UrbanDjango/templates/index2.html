@@ -1,0 +1,15 @@
+{% extends 'index.html' %}  <!-- указывает файл, из которого мы будем наследовать блоки  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block string %}
+    {{ block.super }}   <!-- именно здесь будет информация из родительского блока -->
+    <h2 align="center">А Это дополнение к строке из головного сайта</h2> <!-- добавляет свою инфу в инфу блока  -->
+{% endblock %}
+
+</body>
+</html>

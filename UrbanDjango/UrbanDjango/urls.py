@@ -19,18 +19,20 @@ from django.urls import path
 from django.views.generic import TemplateView
 from example1.views import index
 from task2.views import index_task
-from task4.views import index_task4
+from task4.views import index_task4_g, index_task4_p
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),  # Это простое фунциональное представление.
 
-    # path('index/', TemplateView.as_view(template_name='index2.html')),  # Это представление через класс
+    path('index/', TemplateView.as_view(template_name='index2.html')),  # Это представление через класс
     # path('index1/', index),
     path('func/', index_task),
     path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),
-    path('wow/', index_task4),
-    # path('games/', TemplateView.as_view(template_name='fourth_task/platform.html')),
-    path('games/', TemplateView.as_view(template_name='fourth_task/games.html')),
+    path('wow/', index_task4_p),
+    # path('wow/', TemplateView.as_view(template_name='fourth_task/platform.html')),
+    # path('games/', TemplateView.as_view(template_name='fourth_task/games.html')),
+    path('games/', index_task4_g),
     path('cart/', TemplateView.as_view(template_name='fourth_task/cart.html')),
+    # path('menu/', TemplateView.as_view(template_name='fourth_task/menu.html')),
 ]

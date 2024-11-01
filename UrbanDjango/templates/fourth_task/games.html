@@ -1,3 +1,4 @@
+{% extends 'fourth_task\menu.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,38 @@
     <title>WOW_games</title>
 </head>
 <body>
-<h1>Лучшие WOW серверы</h1>
-<ul>
-    <li><h3>Sirus <button>Голосовать</button> </h3></li>
-    <li><h3>Uwow <button>Голосовать</button></h3> </li>
-    <li><h3>WoW Circle <button>Голосовать</button></h3> </li>
-</ul>
+    <header></header>
+        {% block pagename %} Бесплатные серверы {% endblock %}
+    </header>
 
-{% for i in server_list %}
-<h3>{{i}} <button>Голосовать</button> </h3>
-{% endfor %}
+    <nav>
+        {% block menu %}
+        {{ block.super }}
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+        {% for i in server_list %}
+        <h3> {{i}} <button>Голосовать</button> </h3>
+        {% endfor %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <h1 align="center">Лучшие WOW серверы</h1>
+        <ul>
+            <li><h2>Sirus <button>Голосовать</button> </h2></li>
+            <li><h2>Uwow <button>Голосовать</button></h2> </li>
+            <li><h2>WoW Circle <button>Голосовать</button></h2> </li>
+        </ul>
+
+    </footer>
+<!--Или в списке :-->
+<!--{% for i in server_list %}-->
+<!--<h3> {{i}} <button>Голосовать</button> </h3>-->
+<!--{% endfor %}-->
+
 <button><a href="http://127.0.0.1:8000/wow">Вернуться на главную страницу</a></button>
 </body>
 </html>

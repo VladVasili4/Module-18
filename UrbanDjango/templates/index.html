@@ -8,13 +8,14 @@
 </head>
 <body>
 {% include 'inc.html' %} <!-- Вставка шаблона, в котором может быть целый блок(форма или таблица)-->
+
 <h1>{{text}}</h1>
 <h2>{{name}}</h2>
 <h2>{{number}}</h2>
 
 <!-- Дальше идут шаблоны, модернизирующие вывод-->
 
-{% for i in list%}
+{% for i in list %}
     <h4> {{i}} </h4>
 {% endfor %}
 
@@ -35,6 +36,10 @@
 {% else %}
 <h3>Fatality, big list</h3>
 {% endif %}
+
+{% block string %}
+<h1>Это сторка, передаваемая из головного файла index.html на другую страницу</h1>
+{% endblock %}
 
 </body>
 </html>
