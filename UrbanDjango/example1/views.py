@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 # Create your views here.
-def index(request):
+def index1(request):
     text = 'About LOVE'
     name = 'Viktor'
     number = 777

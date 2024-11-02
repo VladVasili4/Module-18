@@ -17,21 +17,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
-from example1.views import index
+from example1.views import index1
 from task2.views import index_task
 from task4.views import index_task4_g, index_task4_p, index_task4_c
+from task5.views import sign_up_by_django
+from task5.views import sign_up_by_html
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),  # Это простое фунциональное представление.
-
-    path('index/', TemplateView.as_view(template_name='index2.html')),  # Это представление через класс
-    # path('index1/', index),
-    path('func/', index_task),
-    path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),
-    path('wow/', index_task4_p),
-    path('games/', index_task4_g),
-    path('cart/', index_task4_c),
+    path('', sign_up_by_django),
+    path('django_sign_up', sign_up_by_html),
+    # path('', index1),
+    # path('index/', TemplateView.as_view(template_name='index2.html')),  # Это представление через класс
+    # # path('index1/', index),
+    # path('func/', index_task),
+    # path('class/', TemplateView.as_view(template_name='second_task/class_template.html')),
+    # path('wow/', index_task4_p),
+    # path('games/', index_task4_g),
+    # path('cart/', index_task4_c),
     # path('wow/', TemplateView.as_view(template_name='fourth_task/platform.html')),
     # path('games/', TemplateView.as_view(template_name='fourth_task/games.html')),
     # path('cart/', TemplateView.as_view(template_name='fourth_task/cart.html')),
